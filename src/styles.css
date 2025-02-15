@@ -54,6 +54,8 @@ nav > *{
     font-style:italic;
     font-weight: 400px ;
     line-height: normal;
+    display: inline-block;
+    transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1); 
 }
 #projects_header{
     display: flex;
@@ -74,4 +76,18 @@ nav > *{
     font-size: small;
     margin-left: 4rem;
     padding-top: 1rem;
+}
+nav p:hover{
+    background: linear-gradient(77deg, #FFF 73.88%, #352F2F 97.73%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* font-size: larger;
+     */
+     transform: scale(1.2); 
+
+
+
+
+
 }

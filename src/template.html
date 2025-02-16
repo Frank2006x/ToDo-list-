@@ -17,8 +17,8 @@
 
         </div>
         <div id="main_todo">
-            <p>Today</p>
-            <p>This week</p>
+            <p class="item" onclick="setactive(this)">Today</p>
+            <p class="item" onclick="setactive(this)">This week</p>
 
         </div>
         <div id="projects">
@@ -28,21 +28,75 @@
                 flex-shrink: 0;">
                     <path d="M38.9583 11.4583H11.4583C10.1294 11.4587 8.82909 11.8441 7.71469 12.5681C6.60029 13.292 5.71959 14.3234 5.17917 15.5375L0 27.2021V4.58333C0 3.36776 0.482885 2.20197 1.34243 1.34243C2.20197 0.482885 3.36776 0 4.58333 0H13.75C14.9436 0.00465453 16.0908 0.4635 16.9583 1.28333L22.5271 6.875H34.375C35.5906 6.875 36.7564 7.35788 37.6159 8.21743C38.4754 9.07697 38.9583 10.2428 38.9583 11.4583ZM45.3979 17.0042C45.187 16.708 44.9087 16.4662 44.586 16.2989C44.2632 16.1315 43.9052 16.0433 43.5417 16.0417H11.4583C11.0175 16.0426 10.5863 16.1706 10.2164 16.4104C9.84652 16.6503 9.55365 16.9917 9.37292 17.3937L0.20625 38.0187C0.0495334 38.3674 -0.0174913 38.7497 0.0112772 39.1308C0.0400457 39.512 0.163694 39.8799 0.370965 40.201C0.578235 40.5222 0.862545 40.7864 1.19801 40.9696C1.53347 41.1528 1.90943 41.2492 2.29167 41.25H36.6667C37.1471 41.2512 37.6158 41.1015 38.0064 40.8218C38.3971 40.5422 38.69 40.1468 38.8438 39.6917L45.7188 19.0667C45.8324 18.722 45.8626 18.3553 45.8068 17.9968C45.751 17.6382 45.6109 17.298 45.3979 17.0042Z" fill="white"/>
                 </svg>
-                <p>Project</p>    
+                <p >Project</p>    
 
             </div>
             <div id="content">
-                <p>Study</p>
-                <p>Gym</p>
-                <p>Work</p>
+                <p class="item" onclick="setactive(this)">Study</p>
+                <p class="item" onclick="setactive(this)">Gym</p>
+                <p class="item" onclick="setactive(this)">Work</p>
 
             </div>
             <p id="add_project">+ Add projects</p>
 
         </div>
         
-
+        
+        
     </nav>
-    
+    <div>
+        <div id="Todo">ToDo List</div>
+        <div id="Todo_type">Today</div>
+
+    </div>
+    <button id="plus_button" onclick="openDialog()">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" width="110" height="110" viewBox="0 0 110 110" fill="none" id="plus">
+            <!-- Circle with Gradient -->
+            <circle cx="55" cy="55" r="55" fill="url(#paint0_linear_23_36)"/>
+            
+            <!-- Plus Sign -->
+            <line x1="35" y1="55" x2="75" y2="55" stroke="white" stroke-width="6" stroke-linecap="round"/>
+            <line x1="55" y1="35" x2="55" y2="75" stroke="white" stroke-width="6" stroke-linecap="round"/>
+            
+            <!-- Gradient Definition -->
+            <defs>
+                <linearGradient id="paint0_linear_23_36" x1="55" y1="0" x2="55" y2="110" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#E339CD"/>
+                    <stop offset="1" stop-color="#7828B2"/>
+                </linearGradient>
+            </defs>
+        </svg>
+    </button>
+    <dialog id="input_form" >
+        <div id="input_context">
+            <h1>New Task</h1>
+            <form >
+                <div class="details">
+
+                    <label for="name">Task Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <br>
+                <div class="details">
+
+                    <label for="description">Description:</label>
+                    <input type="text" id="desc" name="desc" required>
+                </div>
+                <br>
+                <div class="details">
+
+                    <label for="due-date">Due Date:</label>
+                    <input type="date" id="due-date" name="due_date" required>
+                    
+                </div>
+                
+              </form>
+        </div>
+
+
+    </dialog>
+      
+      
 </body>
 </html>

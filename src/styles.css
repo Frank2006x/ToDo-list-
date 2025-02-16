@@ -5,7 +5,10 @@
     padding: 0;
     margin: 0;
 }
+body{
+    display: flex;
 
+}
 nav{
     box-sizing: border-box;
     width: 20rem;
@@ -77,17 +80,116 @@ nav > *{
     margin-left: 4rem;
     padding-top: 1rem;
 }
-nav p:hover{
+.item:hover{
     background: linear-gradient(77deg, #FFF 73.88%, #352F2F 97.73%);
     background-clip: text;
+    cursor: pointer;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     /* font-size: larger;
      */
      transform: scale(1.2); 
 
+    }
+.active{
+    color: #1c1fea;
+    /* font-size: larger;
+     */
+     transform: scale(1.2); 
+     
+    
+}
+
+#Todo{
+    font-size: 3.5rem;
+    margin: 2rem 2rem 0rem 2rem;
+    width: 1fr;
+    font-family: "Mada", serif;
+}
+#Todo_type{
+    width: 1fr;
+    font-size: 2rem;
+    margin: 0rem 2.5rem;
+    text-decoration: underline;
+    font-family: "Mada", serif;
+    
+}
+#plus{
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    
+}
+#plus_button{
+    background: none;
+    border: none;
+    cursor: pointer;
+
+}
+#input_form{
+    border-radius: 2rem;
+    height: 30rem;
+    width: 47rem;
+    border-radius: 2.875rem;
+    border: 0px solid #000;
+    background: #ffffff;
+    flex-shrink: 0;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+
+}
+#input_form::backdrop{
+    background-color: #0607177b;
+    
+}
+
+#input_form *{
+    font-family: "Roboto", serif;
+    font-style: italic;
+    
+}
+form{
+    /* display: flex;
+    flex-direction: column;
+    align-items: flex-start; */
+    
+}
+label{
+    font-size: large;
+}
+
+input{
+    float: right;
+    width: 45%;
+    height: 1.7rem;
+    border-radius: 0.5rem;
+    border: none;
+    border: 2px rgb(86, 0, 247) solid;
+    background-color: rgb(222, 219, 219);
+}
+
+input:focus{
+    border: none;
+    outline: none;
+    background-color: rgba(220, 184, 250, 0.365);
+    border: 2px rgb(137, 23, 189) solid; 
+    border-radius: 0.5rem;
+}
 
 
+.details{
+    margin-top: 0.3rem ;
+    margin-right: 6rem;
+    margin-bottom: 0.3rem;
 
-
+}
+#input_context{
+    box-sizing: border-box;
+    margin: 3rem;
+}
+#input_context>h1{
+    margin-bottom: 2.5rem;
 }

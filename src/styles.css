@@ -178,6 +178,9 @@ input:focus{
     border: 2px rgb(137, 23, 189) solid; 
     border-radius: 0.5rem;
 }
+input:valid{
+    border: 3px rgb(82, 194, 82) solid;
+}
 
 
 .details{
@@ -186,10 +189,76 @@ input:focus{
     margin-bottom: 0.3rem;
 
 }
+#priority{
+    margin-top: 3rem;
+    font-weight: 400;
+    font-style: normal;
+    display: flex;
+    gap: 16rem;
+}
+
+#priority button{
+    width: 4.5rem;
+    height: 1.6rem;
+    margin-right: 0.2rem;
+    border-radius: 0.4rem;
+    border: none;
+    color: #FFF;
+    box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+}
+#low{
+    /* border: 1px rgb(0, 0, 0) solid; */
+    background-color: rgb(246, 221, 0);
+
+}
+#high{
+    background-color: rgba(255, 0, 0, 0.838);
+}
+#medium{
+    background-color: rgba(70, 204, 70, 0.866);
+}
+#low:hover{
+    color:rgb(246, 221, 0);
+    background-color: #FFF;
+}
+#medium:hover{
+    color:rgba(70, 204, 70, 0.866);
+    background-color: #FFF;
+}
+#high:hover{
+    color:rgba(255, 0, 0, 0.838);
+    background-color: #FFF;
+}
+#low.click { color: rgb(246, 221, 0); background-color: #FFF; }
+#medium.click { color: rgba(70, 204, 70, 0.866); background-color: #FFF; }
+#high.click { color: rgba(255, 0, 0, 0.838); background-color: #FFF; }
+
 #input_context{
     box-sizing: border-box;
     margin: 3rem;
 }
 #input_context>h1{
     margin-bottom: 2.5rem;
+}
+#cancel{
+    all:unset;
+    width: 59.3px;
+    height: 59.3px;
+    
+}
+
+#submit{
+    all:unset;
+    width: 60px;
+    height: 60px;
+    
+
+}
+
+#form-btn{
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+    margin: 3rem 4rem;
+    
 }

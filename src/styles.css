@@ -262,3 +262,6 @@ input:valid{
     margin: 3rem 4rem;
     
 }
+#pri-value{
+    display: none;
+}

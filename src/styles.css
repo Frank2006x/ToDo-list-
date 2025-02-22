@@ -10,6 +10,7 @@ body{
 
 }
 nav{
+    position: fixed;
     box-sizing: border-box;
     width: 20rem;
     height: 100vh;
@@ -264,4 +265,61 @@ input:valid{
 }
 #pri-value{
     display: none;
+}
+
+#todo{
+    width: 8rem;
+    height: 2rem;
+    background-color: #1c1fea;
+    display: flex;
+    width: 50rem;
+    height: 3rem;
+    border: none;
+    border-radius: 0.7rem;
+    background: linear-gradient(90deg, #493E48 0%, #935ACC 67.52%, #E339CD 100%);
+    color: #FFF;
+    font-size: medium;   
+    font-family:"Mada", serif;
+    align-items: center;
+    margin:1rem 3rem;
+    flex-direction: row;
+}
+
+#Todo-titles{
+    height: fit-content;
+}
+
+#main-page{
+    display: flex;
+    flex-direction: column;
+    margin-left:20rem ;
+}
+#myCheckbox{
+    margin-right: auto;
+    width: 1.7rem;
+    margin: 1rem;
+    
+    cursor: pointer;
+    
+    
+}
+#myCheckbox:checked {
+    accent-color: #ffffff; 
+    
+}
+#myCheckbox.rounded {
+    border-radius: 50%; /* Makes it a perfect circle */
+}
+#todo >button{
+    background-color: transparent;
+    border: none;
+    
+}
+#info{
+    height:32px;
+    margin-left: auto;
+    padding-right: 1rem;
+}
+#del{
+    margin-right: 2rem;
 }

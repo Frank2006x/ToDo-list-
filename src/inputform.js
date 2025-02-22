@@ -1,9 +1,22 @@
+import Card from './card.js'
+
+
 export default class inputForm{
+    
     static openDialog(){
         document.getElementById("input_form").showModal();
         console.log("hi");
     }
     static closeDialog(){
+        const name = document.getElementById("name");
+        const desc = document.getElementById("desc");
+        const pri = document.getElementById("pri-value");
+        const date = document.getElementById("due-date");
+
+        if (name) name.value = "";
+        if (desc) desc.value = "";
+        if (pri) pri.textContent = "";
+        if (date) date.value = "";
         document.getElementById("input_form").close();
     }
     static setClicked(Element){
@@ -16,12 +29,14 @@ export default class inputForm{
         console.log(value.textContent);
     }
     static submitData(){
-        const name=document.getElementById("name").value;
-        const desc=document.getElementById("desc").value;
-        const pri=document.getElementById("pri-value").value;
-        // const date=document.getElementById("due_date").value;
-        let dataSet={"name":name,"desc":desc,"pri":pri};
+        let name=document.getElementById("name").value;
+        let desc=document.getElementById("desc").value;
+        let priValue=document.getElementById("pri-value").textContent;
+        let dueDate=document.getElementById("due-date").value;
+
+        let dataSet=new Card(name,desc,dueDate,priValue);
         console.log(dataSet);
+        
         inputForm.closeDialog();
     }
     static enableClickOutside() {

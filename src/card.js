@@ -13,9 +13,23 @@ export default class card{
         checkbox.name = "myCheckbox";
         let cardName=document.createElement("p");
         cardName.innerHTML=name;
+
+
+        checkbox.addEventListener("change", ()=> {
+            if (checkbox.checked) {
+                cardName.style.textDecoration = "line-through"; 
+            } else {
+                cardName.style.textDecoration = "none"; 
+            }
+        });
         
         let del=document.createElement("button");
         del.setAttribute("id","del");
+        del.addEventListener("click",()=>delCard(todo));
+
+
+
+
         del.innerHTML=`<svg xmlns="http://www.w3.org/2000/svg" width="34" height="38" viewBox="0 0 34 38" fill="none">
   <path d="M13 17V29" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M21 17V29" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -26,15 +40,42 @@ export default class card{
 
         let info=document.createElement("button");
         info.setAttribute("id","info");
-        info.innerHTML=`<svg xmlns="http://www.w3.org/2000/svg" width="35" height="32" viewBox="0 0 35 32" fill="none">
-  <path d="M3.795 0.00262481C1.66175 0.00262481 0 1.51725 0 3.46762V28.203C0 30.1507 1.66175 31.668 3.795 31.668H30.889C33.0222 31.668 34.684 30.1507 34.684 28.203V3.465C34.684 1.51725 33.0222 0 30.889 0L3.795 0.00262481ZM14.467 5.334H20.217V10.584H14.467V5.334ZM14.467 13.209H20.217V26.334H14.467V13.209Z" fill="white"/>
-  </svg>`;
         todo.appendChild(checkbox);
         todo.appendChild(cardName);
         todo.appendChild(info);
         todo.appendChild(del);
         todoList.appendChild(todo);
 
+        let InfoBox=document.getElementById("Info");
+        let details=document.getElementById("Info-div");
+        info.addEventListener("click",()=>{
+            
+            let infoName=document.createElement("h1");
+            infoName.innerHTML=name;
+            let infoDesc=document.createElement("p");
+            infoDesc.innerHTML=desc;
+            let infoDate=document.createElement("p");
+            infoDate.innerHTML=dueDate;
+            let infoPri=document.createElement("button");
+            infoPri.innerHTML=priValue;
+            infoPri.setAttribute("id","info-btn")
+            infoPri.setAttribute("id",priValue.toLowerCase());
+            details.appendChild(infoName);
+            details.appendChild(infoDesc);
+            details.appendChild(infoDate);
+            details.appendChild(infoPri);
+            
+            InfoBox.showModal();
+        })
+        info.innerHTML=`<svg xmlns="http://www.w3.org/2000/svg" width="35" height="32" viewBox="0 0 35 32" fill="none">
+  <path d="M3.795 0.00262481C1.66175 0.00262481 0 1.51725 0 3.46762V28.203C0 30.1507 1.66175 31.668 3.795 31.668H30.889C33.0222 31.668 34.684 30.1507 34.684 28.203V3.465C34.684 1.51725 33.0222 0 30.889 0L3.795 0.00262481ZM14.467 5.334H20.217V10.584H14.467V5.334ZM14.467 13.209H20.217V26.334H14.467V13.209Z" fill="white"/>
+  </svg>`;
+        
 
     }
+}
+
+function delCard(Element){
+    Element.remove();
+
 }

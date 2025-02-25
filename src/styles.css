@@ -346,8 +346,10 @@ input:valid{
 
 #Info{
     border-radius: 2rem;
-    height: 25rem;
-    width: 38rem;
+    height: 15rem;
+    width: 25rem;
+    /* display: hidden; */
+    /* flex-direction: row; */
     border-radius: 2.875rem;
     border: 0px solid #000;
     background: #ffffff;
@@ -364,5 +366,13 @@ input:valid{
     background-color: #00000056;
 }
 #Info-div{
+    /* display: hidden; */
     margin: 3rem;
+    font-family:"Mada", serif;
+}
+#info-close{
+    border: none;
+    height: 40px;
+    float: right;
+    margin: 1rem;
 }

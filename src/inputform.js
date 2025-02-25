@@ -33,6 +33,10 @@ export default class inputForm{
         let desc=document.getElementById("desc").value;
         let priValue=document.getElementById("pri-value").textContent;
         let dueDate=document.getElementById("due-date").value;
+        if (!name||!desc||!dueDate){
+            alert("Please the all fields before submiting");
+            return ;
+        }
 
         let dataSet=new Card(name,desc,dueDate,priValue);
         console.log(dataSet);

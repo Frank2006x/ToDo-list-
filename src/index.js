@@ -10,4 +10,5 @@ document.addEventListener("DOMContentLoaded", ()=> {
 });
 
 // new Card(name,desc,dueDate,priValue)
-new card("frank","helloewuhowh ouherowui hor woeuirh o","43/23/234","high");
+// new card("frank","helloewuhowh ouherowui hor woeuirh o","43/23/234","high");
+

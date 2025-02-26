@@ -4,6 +4,7 @@ export default class card{
         this.desc=desc;
         this.dueDate=dueDate;
         this.priValue=priValue;
+        let cato=document.getElementById("Todo_type").textContent;
         let todoList=document.getElementById("todo-list");
         let todo=document.createElement("div");
         todo.setAttribute("id","todo");
@@ -25,7 +26,10 @@ export default class card{
         
         let del=document.createElement("button");
         del.setAttribute("id","del");
-        del.addEventListener("click",()=>delCard(todo));
+        del.addEventListener("click",()=>{
+            console.log("Deleting:", this.name, "Category:", cato);
+            this.delCard(todo,cato,this.name)}
+        );
 
 
 
@@ -50,7 +54,7 @@ export default class card{
         let details=document.getElementById("Info-div");
         info.addEventListener("click",()=>{
             InfoBox.style.display="flex";
-            InfoBox.style.flexDirection="row";
+            InfoBox.style.flexDirection="row-reverse";
             let closeBtn=document.createElement("button");
             closeBtn.setAttribute("id","info-close");
             closeBtn.innerHTML=`<svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <rect width="24" height="24" fill="white"></rect> <path d="M7 17L16.8995 7.10051" stroke="#bb00ff" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M7 7.00001L16.8995 16.8995" stroke="#bb00ff" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>`;
@@ -86,12 +90,67 @@ export default class card{
         info.innerHTML=`<svg xmlns="http://www.w3.org/2000/svg" width="35" height="32" viewBox="0 0 35 32" fill="none">
   <path d="M3.795 0.00262481C1.66175 0.00262481 0 1.51725 0 3.46762V28.203C0 30.1507 1.66175 31.668 3.795 31.668H30.889C33.0222 31.668 34.684 30.1507 34.684 28.203V3.465C34.684 1.51725 33.0222 0 30.889 0L3.795 0.00262481ZM14.467 5.334H20.217V10.584H14.467V5.334ZM14.467 13.209H20.217V26.334H14.467V13.209Z" fill="white"/>
   </svg>`;
+    this.saveDate(this.name, this.desc, this.dueDate, this.priValue, cato);
         
 
     }
+    delCard(Element,cato,taskName){
+        console.log(cato, taskName)
+        if (!Element || !cato || !taskName) return;
+        Element.remove();
+        let dataSet=JSON.parse(localStorage.getItem(cato))||[];
+        let updateSet=dataSet.filter(data=>data.name !== taskName);
+        localStorage.setItem(cato,JSON.stringify(updateSet));
+    
+    }
+    saveDate(name,desc,dueDate,priValue,cato){
+        console.log(cato);
+        let data={"name":name,"desc":desc,"dueDate":dueDate,"priValue":priValue};
+    
+            let dataSet = [];
+            let storedData = localStorage.getItem(cato);
+            let dates = [];
+            if (storedData && storedData.trim() !== "") { //Check if storedData is not null and not empty.
+              dates = JSON.parse(storedData);
+            } else {
+              dates = [];
+            }
+            
+            dates.forEach(element => dataSet.push(element)); // Copy existing data
+            dataSet.push(data); // Add new data
+            
+            localStorage.setItem(cato, JSON.stringify(dataSet));
+    }
+
+
 }
 
-function delCard(Element){
-    Element.remove();
+// function delCard(Element,cato,taskName){
+//     console.log(cato, taskName)
+//     if (!Element || !cato || !taskName) return;
+//     Element.remove();
+//     let dataSet=JSON.parse(localStorage.getItem(cato))||[];
+//     let updateSet=dataSet.filter(data=>data.name !== taskName);
+//     localStorage.setItem(cato,JSON.stringify(updateSet));
 
-}
+// }
+
+// function saveDate(name,desc,dueDate,priValue,cato){
+//     console.log(cato);
+//     let data={"name":name,"desc":desc,"dueDate":dueDate,"priValue":priValue};
+
+//         let dataSet = [];
+//         let storedData = localStorage.getItem(cato);
+//         let dates = [];
+//         if (storedData && storedData.trim() !== "") { //Check if storedData is not null and not empty.
+//           dates = JSON.parse(storedData);
+//         } else {
+//           dates = [];
+//         }
+        
+//         dates.forEach(element => dataSet.push(element)); // Copy existing data
+//         dataSet.push(data); // Add new data
+        
+//         localStorage.setItem(cato, JSON.stringify(dataSet));
+// }
+

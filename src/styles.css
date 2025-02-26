@@ -359,6 +359,7 @@ input:valid{
     left: 50%;
     transform: translate(-50%, -50%);
     
+    
 
 }
 
@@ -366,13 +367,17 @@ input:valid{
     background-color: #00000056;
 }
 #Info-div{
-    /* display: hidden; */
-    margin: 3rem;
+    margin: 3rem 0rem 3rem 3rem;
+    margin-right: auto; 
     font-family:"Mada", serif;
+   
 }
 #info-close{
+    position: fixed;
     border: none;
     height: 40px;
-    float: right;
-    margin: 1rem;
+    margin: 1rem 1rem 0rem 0rem;
+    
+    
+    
 }

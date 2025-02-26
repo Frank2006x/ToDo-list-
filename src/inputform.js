@@ -33,6 +33,7 @@ export default class inputForm{
         let desc=document.getElementById("desc").value;
         let priValue=document.getElementById("pri-value").textContent;
         let dueDate=document.getElementById("due-date").value;
+        let catogory=document.getElementById("Todo_type").textContent;
         if (!name||!desc||!dueDate){
             alert("Please the all fields before submiting");
             return ;

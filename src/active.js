@@ -6,7 +6,8 @@ export default function setactive(Element){
     changeheader(Element);
 }
 
-function changeheader(Element){
+export function changeheader(Element){
+    console.log("hello");
     const header=document.getElementById("Todo_type");
     header.textContent=Element.textContent;
     let todoList=document.getElementById("Todo");
@@ -18,7 +19,7 @@ function changeheader(Element){
 
 }
 
-function loadData(cato){
+export function loadData(cato){
     let dataSet=[];
     let storedData=localStorage.getItem(cato);
     if (storedData && storedData.trim() !=="" ){
@@ -30,3 +31,4 @@ function loadData(cato){
         new card(i.name,i.desc,i.dueDate,i.priValue);
     })
 }
+

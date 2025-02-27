@@ -1,4 +1,5 @@
 import setactive from './active.js';
+import {changeheader,loadData} from './active.js';
 
 export default class addProject {
     constructor(proName) {
@@ -44,6 +45,8 @@ export default class addProject {
 
     static closeProject() {
         let dialog = document.getElementById("addDialog");
+        let proName = document.getElementById("addProject")
+        proName.value="";
         if (dialog) {
             console.log("Closing dialog...");
             dialog.close();  // ✅ Correctly closes the dialog
@@ -64,8 +67,17 @@ export default class addProject {
     }
     delProject(Element,proName){
         Element.remove();
+        proName=proName.trim();
+        console.log(proName);
+        localStorage.removeItem(proName);
+
+        
         let dataSet=JSON.parse(localStorage.getItem("Pro")) || [];
         let updateSet=dataSet.filter(data=>data !==proName);
         localStorage.setItem("Pro",JSON.stringify(updateSet));
+        let Today=document.getElementById("TodaY");
+        console.log(Today.textContent);
+        setTimeout(() => changeheader(Today), 100);
+
     }
 }

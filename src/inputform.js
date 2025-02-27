@@ -41,7 +41,8 @@ export default class inputForm{
         }
 
         let dataSet=new Card(name,desc,dueDate,priValue);
-        Card.saveDate(name, desc, dueDate, priValue, catogory);
+        catogory=catogory.trim();
+        Card.saveDate(name, desc, dueDate, priValue,catogory);
         console.log(dataSet);
         
         inputForm.closeDialog();

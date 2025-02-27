@@ -5,7 +5,7 @@ export default class inputForm{
     
     static openDialog(){
         document.getElementById("input_form").showModal();
-        console.log("hi");
+        // console.log("hi");
     }
     static closeDialog(){
         const name = document.getElementById("name");
@@ -28,6 +28,7 @@ export default class inputForm{
         value.textContent=Element.innerHTML;
         console.log(value.textContent);
     }
+    
     static submitData(){
         let name=document.getElementById("name").value;
         let desc=document.getElementById("desc").value;
@@ -40,6 +41,7 @@ export default class inputForm{
         }
 
         let dataSet=new Card(name,desc,dueDate,priValue);
+        Card.saveDate(name, desc, dueDate, priValue, catogory);
         console.log(dataSet);
         
         inputForm.closeDialog();

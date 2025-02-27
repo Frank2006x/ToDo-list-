@@ -11,6 +11,7 @@ export default class card{
         const checkbox = document.createElement("input");
         checkbox.type = "checkbox";
         checkbox.id = "myCheckbox";
+        checkbox.className="inputForTodo";
         checkbox.name = "myCheckbox";
         let cardName=document.createElement("p");
         cardName.innerHTML=name;
@@ -90,7 +91,7 @@ export default class card{
         info.innerHTML=`<svg xmlns="http://www.w3.org/2000/svg" width="35" height="32" viewBox="0 0 35 32" fill="none">
   <path d="M3.795 0.00262481C1.66175 0.00262481 0 1.51725 0 3.46762V28.203C0 30.1507 1.66175 31.668 3.795 31.668H30.889C33.0222 31.668 34.684 30.1507 34.684 28.203V3.465C34.684 1.51725 33.0222 0 30.889 0L3.795 0.00262481ZM14.467 5.334H20.217V10.584H14.467V5.334ZM14.467 13.209H20.217V26.334H14.467V13.209Z" fill="white"/>
   </svg>`;
-    this.saveDate(this.name, this.desc, this.dueDate, this.priValue, cato);
+    
         
 
     }
@@ -103,7 +104,7 @@ export default class card{
         localStorage.setItem(cato,JSON.stringify(updateSet));
     
     }
-    saveDate(name,desc,dueDate,priValue,cato){
+    static saveDate(name,desc,dueDate,priValue,cato){
         console.log(cato);
         let data={"name":name,"desc":desc,"dueDate":dueDate,"priValue":priValue};
     
@@ -124,33 +125,4 @@ export default class card{
 
 
 }
-
-// function delCard(Element,cato,taskName){
-//     console.log(cato, taskName)
-//     if (!Element || !cato || !taskName) return;
-//     Element.remove();
-//     let dataSet=JSON.parse(localStorage.getItem(cato))||[];
-//     let updateSet=dataSet.filter(data=>data.name !== taskName);
-//     localStorage.setItem(cato,JSON.stringify(updateSet));
-
-// }
-
-// function saveDate(name,desc,dueDate,priValue,cato){
-//     console.log(cato);
-//     let data={"name":name,"desc":desc,"dueDate":dueDate,"priValue":priValue};
-
-//         let dataSet = [];
-//         let storedData = localStorage.getItem(cato);
-//         let dates = [];
-//         if (storedData && storedData.trim() !== "") { //Check if storedData is not null and not empty.
-//           dates = JSON.parse(storedData);
-//         } else {
-//           dates = [];
-//         }
-        
-//         dates.forEach(element => dataSet.push(element)); // Copy existing data
-//         dataSet.push(data); // Add new data
-        
-//         localStorage.setItem(cato, JSON.stringify(dataSet));
-// }
 

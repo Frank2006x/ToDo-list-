@@ -9,6 +9,10 @@ body{
     display: flex;
 
 }
+#add_project{
+    border: none;
+    background-color: transparent;
+}
 nav{
     position: fixed;
     box-sizing: border-box;
@@ -49,7 +53,7 @@ nav>#main_todo{
     align-items: center;
     flex-direction: column;
 }
-nav > *{
+nav > *,#add_project{
     color: #ffffff;
     font-family: "Roboto", serif;
     font-size: 1.5rem;
@@ -60,6 +64,7 @@ nav > *{
     line-height: normal;
     display: inline-block;
     transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1); 
+    
 }
 #projects_header{
     display: flex;
@@ -81,8 +86,12 @@ nav > *{
     margin-left: 4rem;
     padding-top: 1rem;
 }
-.item:hover{
-    background: linear-gradient(77deg, #FFF 73.88%, #352F2F 97.73%);
+.item{
+    transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1); 
+}
+.item:hover,#add_project:hover{
+    background: linear-gradient(77deg, #bdfffc 73.88%, #ffffff 97.73%);
+    /* background-color: #ffffffef; */
     background-clip: text;
     cursor: pointer;
     -webkit-background-clip: text;
@@ -152,26 +161,23 @@ nav > *{
     font-style: italic;
     
 }
-form{
-    /* display: flex;
-    flex-direction: column;
-    align-items: flex-start; */
-    
-}
+
 label{
     font-size: large;
 }
 
 input{
-    float: right;
-    width: 45%;
-    height: 1.7rem;
+    
     border-radius: 0.5rem;
     border: none;
     border: 2px rgb(86, 0, 247) solid;
     background-color: rgb(222, 219, 219);
 }
-
+.inputForTodo{
+    float: right;
+    width: 45%;
+    height: 1.7rem;
+}
 input:focus{
     border: none;
     outline: none;
@@ -330,7 +336,7 @@ input:valid{
     
 }
 
-#todo >button{
+#todo >button,.btn{
     background-color: transparent;
     border: none;
     
@@ -380,4 +386,41 @@ input:valid{
     
     
     
+}
+#addDialog{
+    border: none;
+    border-radius: 0.5rem;
+    font-family: "Roboto", serif;
+    /* position:fixed; */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    z-index: 1000;
+    width: 20rem;
+    /* height: 8rem; */
+}
+
+#addDialog::backdrop{
+    background-color: #00000056;
+}
+#addProject{
+    width: 18rem;
+
+    margin:1rem 0rem 1rem 0rem;
+    height: 2rem;
+    display: flex;
+}
+
+#addDialog #form-btn{
+    margin: 0rem ;
+}
+
+.project-close-btn{
+    width: 2rem;
+    margin-left: auto;
+    height: 2rem ;
+    border: none;
+    background-color: transparent;
 }

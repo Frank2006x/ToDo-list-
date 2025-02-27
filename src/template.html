@@ -32,12 +32,12 @@
 
             </div>
             <div id="content">
-                <p class="item" onclick="setactive(this)">Study</p>
-                <p class="item" onclick="setactive(this)">Gym</p>
-                <p class="item" onclick="setactive(this)">Work</p>
+                
 
             </div>
-            <p id="add_project">+ Add projects</p>
+            
+            <button id="add_project" onclick="addProject.openDialog()">+ Add projects</button>
+            
             
 
         </div>
@@ -65,6 +65,25 @@
 
 
     </div>
+    <dialog id="addDialog">
+        <form>
+            <label for="addProject" style="display: block;">New Project Name</label>
+            <input type="text" placeholder="Enter the project name:" id="addProject" name="addProject" required>
+            <div id="form-btn">
+            <button id="cancel-pro" class="btn" type="button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 81 81" fill="none">
+                    <path d="M57.0853 0.916687H23.9144C9.50609 0.916687 0.916504 9.50627 0.916504 23.9146V57.0459C0.916504 71.4938 9.50609 80.0834 23.9144 80.0834H57.0457C71.454 80.0834 80.0436 71.4938 80.0436 57.0854V23.9146C80.0832 9.50627 71.4936 0.916687 57.0853 0.916687ZM53.7998 49.6042C54.9477 50.7521 54.9477 52.6521 53.7998 53.8C53.2061 54.3938 52.454 54.6709 51.7019 54.6709C50.9498 54.6709 50.1978 54.3938 49.604 53.8L40.4998 44.6959L31.3957 53.8C30.8019 54.3938 30.0498 54.6709 29.2978 54.6709C28.5457 54.6709 27.7936 54.3938 27.1998 53.8C26.0519 52.6521 26.0519 50.7521 27.1998 49.6042L36.304 40.5L27.1998 31.3959C26.0519 30.2479 26.0519 28.3479 27.1998 27.2C28.3478 26.0521 30.2478 26.0521 31.3957 27.2L40.4998 36.3042L49.604 27.2C50.7519 26.0521 52.6519 26.0521 53.7998 27.2C54.9477 28.3479 54.9477 30.2479 53.7998 31.3959L44.6957 40.5L53.7998 49.6042Z" fill="#DE1717"/>
+                </svg>
+            </button>
+            <button id="submit-pro"  class="btn"  type="submit">
+                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 80 79" fill="none">
+                    <path d="M56.299 0.958313H23.4553C9.18898 0.958313 0.684082 9.32185 0.684082 23.351V55.6104C0.684082 69.6781 9.18898 78.0416 23.4553 78.0416H56.2599C70.5261 78.0416 79.031 69.6781 79.031 55.6489V23.351C79.0702 9.32185 70.5653 0.958313 56.299 0.958313ZM58.6114 30.6354L36.389 52.4885C35.8403 53.0281 35.0956 53.3364 34.3117 53.3364C33.5279 53.3364 32.7832 53.0281 32.2345 52.4885L21.1429 41.5812C20.0063 40.4635 20.0063 38.6135 21.1429 37.4958C22.2795 36.3781 24.1607 36.3781 25.2973 37.4958L34.3117 46.3604L54.457 26.55C55.5936 25.4323 57.4748 25.4323 58.6114 26.55C59.748 27.6677 59.748 29.4791 58.6114 30.6354Z" fill="#1EE62B" stroke="white" stroke-width="0.00024"/>
+                </svg>
+            </button>
+        </div>
+
+        </form>
+    </dialog>
     
     <button id="plus_button" onclick="inputForm.openDialog()">
         
@@ -92,19 +111,19 @@
                 <div class="details">
 
                     <label for="name">Task Name:</label>
-                    <input type="text" id="name" name="name" required fdprocessedid="16dmu">
+                    <input type="text" id="name" name="name" required fdprocessedid="16dmu" class="inputForTodo">
                 </div>
                 <br>
                 <div class="details">
 
                     <label for="description">Description:</label>
-                    <input type="text" id="desc" name="desc" required fdprocessedid="16dmu">
+                    <input type="text" id="desc" name="desc" required fdprocessedid="16dmu" class="inputForTodo">
                 </div>
                 <br>
                 <div class="details">
 
                     <label for="due-date">Due Date:</label>
-                    <input type="date" id="due-date" name="due_date" required fdprocessedid="16dmu">
+                    <input type="date" id="due-date" name="due_date" required fdprocessedid="16dmu" class="inputForTodo">
                     
                 </div>
                 <div class="details" id="priority">

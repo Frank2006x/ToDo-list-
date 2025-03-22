@@ -9,7 +9,9 @@ export default function setactive(Element){
 export function changeheader(Element){
     console.log("hello");
     const header=document.getElementById("Todo_type");
-    header.textContent=Element.textContent;
+    console.log(header);
+    header.textContent=Element.textContent.trim();
+    console.log(header.textContent,Element.textContent);
     let todoList=document.getElementById("Todo");
     document.querySelectorAll("#todo").forEach(i=>{
         i.remove();

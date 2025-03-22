@@ -44,7 +44,7 @@ export default class inputForm{
         catogory=catogory.trim();
         Card.saveDate(name, desc, dueDate, priValue,catogory);
         console.log(dataSet);
-        
+        // setTimeout(()=>inputForm.closeDialog(),3000)  //seted timeout
         inputForm.closeDialog();
     }
     static enableClickOutside() {
